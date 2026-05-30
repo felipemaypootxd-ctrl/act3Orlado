@@ -87,7 +87,7 @@ namespace act3Orlado
             }
             else
             {
-                e.Handled &= true;
+                e.Handled = true;
             }
         }
     }
