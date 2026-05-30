@@ -43,6 +43,8 @@
             this.pgHistorial = new System.Windows.Forms.TabPage();
             this.pgConsultar = new System.Windows.Forms.TabPage();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.pgAgregar.SuspendLayout();
             this.SuspendLayout();
@@ -63,6 +65,8 @@
             // 
             // pgAgregar
             // 
+            this.pgAgregar.Controls.Add(this.txtTelefono);
+            this.pgAgregar.Controls.Add(this.label4);
             this.pgAgregar.Controls.Add(this.btnGuardarCliente);
             this.pgAgregar.Controls.Add(this.label3);
             this.pgAgregar.Controls.Add(this.label2);
@@ -181,6 +185,24 @@
             this.imageList1.Images.SetKeyName(3, "mostrar.png");
             this.imageList1.Images.SetKeyName(4, "consultar.png");
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(80, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 16);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Telefono";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(149, 171);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(304, 22);
+            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.Text = "999 999 99 99";
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -212,6 +234,8 @@
         private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button btnGuardarCliente;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Label label4;
     }
 }
 

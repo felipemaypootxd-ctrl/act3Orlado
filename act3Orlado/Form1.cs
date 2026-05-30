@@ -31,26 +31,30 @@ namespace act3Orlado
         public class Cliente
         {
             public string Nombre { get; set; }
-            public string Telefono { get; set; }
+            public string correo { get; set; }
             public string Direccion { get; set; }
+            public string telefono { get; set; }
         }
 
         private void btnGuardarCliente_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
         string.IsNullOrWhiteSpace(txtCorreo.Text) ||
-        string.IsNullOrWhiteSpace(txtDomicilio.Text))
+        string.IsNullOrWhiteSpace(txtDomicilio.Text) ||
+        string.IsNullOrWhiteSpace(txtTelefono.Text))
             {
-                MessageBox.Show("Por favor, llene todos los campos antes de guardar.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, llene los datos", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // Detiene la ejecución si falta algo
             }
 
-            
+
             Cliente nuevoCliente = new Cliente
             {
                 Nombre = txtNombre.Text,
-                Telefono = txtCorreo.Text,
-                Direccion = txtDomicilio.Text
+                correo = txtCorreo.Text,
+                Direccion = txtDomicilio.Text,
+                telefono = txtTelefono.Text
+
             };
             listaClientes.Add(nuevoCliente);
 
@@ -58,9 +62,9 @@ namespace act3Orlado
             txtNombre.Clear();
             txtCorreo.Clear();
             txtDomicilio.Clear();
+            txtTelefono.Clear();
 
          
-        //    MessageBox.Show("¡Cliente registrado con éxito en el sistema!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -71,7 +75,19 @@ namespace act3Orlado
             }
             else
             {
-                e.Handled |= true;
+                e.Handled = true;
+            }
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar==' ')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled &= true;
             }
         }
     }
