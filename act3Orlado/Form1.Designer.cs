@@ -218,11 +218,11 @@
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dgvClientes.Location = new System.Drawing.Point(83, 199);
+            this.dgvClientes.Location = new System.Drawing.Point(19, 199);
             this.dgvClientes.Name = "dgvClientes";
             this.dgvClientes.RowHeadersWidth = 51;
             this.dgvClientes.RowTemplate.Height = 24;
-            this.dgvClientes.Size = new System.Drawing.Size(639, 122);
+            this.dgvClientes.Size = new System.Drawing.Size(725, 122);
             this.dgvClientes.TabIndex = 9;
             // 
             // Nombre

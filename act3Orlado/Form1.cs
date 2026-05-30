@@ -19,6 +19,7 @@ namespace act3Orlado
         }
         List<Cliente> listaClientes = new List<Cliente>();
 
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -26,7 +27,7 @@ namespace act3Orlado
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            llenarClientes(dgvClientes);
         }
         public class Cliente
         {
@@ -57,7 +58,8 @@ namespace act3Orlado
 
             };
             listaClientes.Add(nuevoCliente);
-
+            dgvClientes.Rows.Add(txtNombre.Text,txtCorreo.Text,txtDomicilio.Text,txtTelefono.Text);
+            
            
             txtNombre.Clear();
             txtCorreo.Clear();
@@ -66,6 +68,11 @@ namespace act3Orlado
 
          
         }
+        public void llenarClientes(DataGridView dt)
+        {
+            dgvClientes.Rows.Add(txtNombre.Text, txtCorreo.Text, txtDomicilio.Text, txtTelefono.Text);
+        }
+
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -78,7 +85,7 @@ namespace act3Orlado
                 e.Handled = true;
             }
         }
-
+        
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (char.IsDigit(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar==' ')
