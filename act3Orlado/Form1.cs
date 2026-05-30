@@ -45,7 +45,7 @@ namespace act3Orlado
                 return; // Detiene la ejecución si falta algo
             }
 
-            // 2. Guardar en nuestra lista en memoria (RAM)
+            
             Cliente nuevoCliente = new Cliente
             {
                 Nombre = txtNombre.Text,
@@ -59,8 +59,20 @@ namespace act3Orlado
             txtCorreo.Clear();
             txtDomicilio.Clear();
 
-            // Mensaje de éxito
-            MessageBox.Show("¡Cliente registrado con éxito en el sistema!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+         
+        //    MessageBox.Show("¡Cliente registrado con éxito en el sistema!", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar) || e.KeyChar==' ')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled |= true;
+            }
         }
     }
 }
