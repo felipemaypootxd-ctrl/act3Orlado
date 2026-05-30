@@ -45,8 +45,14 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label4 = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.dgvClientes = new System.Windows.Forms.DataGridView();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.pgAgregar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,6 +71,7 @@
             // 
             // pgAgregar
             // 
+            this.pgAgregar.Controls.Add(this.dgvClientes);
             this.pgAgregar.Controls.Add(this.txtTelefono);
             this.pgAgregar.Controls.Add(this.label4);
             this.pgAgregar.Controls.Add(this.btnGuardarCliente);
@@ -84,7 +91,7 @@
             // 
             // btnGuardarCliente
             // 
-            this.btnGuardarCliente.Location = new System.Drawing.Point(309, 219);
+            this.btnGuardarCliente.Location = new System.Drawing.Point(517, 49);
             this.btnGuardarCliente.Name = "btnGuardarCliente";
             this.btnGuardarCliente.Size = new System.Drawing.Size(85, 68);
             this.btnGuardarCliente.TabIndex = 6;
@@ -203,6 +210,49 @@
             this.txtTelefono.Text = "999 999 99 99";
             this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
+            // dgvClientes
+            // 
+            this.dgvClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Nombre,
+            this.Column1,
+            this.Column2,
+            this.Column3});
+            this.dgvClientes.Location = new System.Drawing.Point(83, 199);
+            this.dgvClientes.Name = "dgvClientes";
+            this.dgvClientes.RowHeadersWidth = 51;
+            this.dgvClientes.RowTemplate.Height = 24;
+            this.dgvClientes.Size = new System.Drawing.Size(639, 122);
+            this.dgvClientes.TabIndex = 9;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 125;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Correo";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 125;
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Domicilio";
+            this.Column2.MinimumWidth = 6;
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 125;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Telefono";
+            this.Column3.MinimumWidth = 6;
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 125;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -215,6 +265,7 @@
             this.tabControl1.ResumeLayout(false);
             this.pgAgregar.ResumeLayout(false);
             this.pgAgregar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -236,6 +287,11 @@
         private System.Windows.Forms.Button btnGuardarCliente;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgvClientes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
     }
 }
 
